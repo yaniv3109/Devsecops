@@ -79,3 +79,18 @@
 
 # print("Hello", end=' ')  # שים רווח בסוף
 # print("world!")
+
+
+# #שימוש ב-* וב-/
+# def greet(name, /, age, *, city="Unknown"):
+#     print(f"Hello {name}, you are {age} years old and live in {city}.")
+
+# greet("John", 30, city="Tel Aviv")  
+# # יצא: Hello John, you are 30 years old and live in Tel Aviv.
+
+# greet("Sarah", 25)  
+# # יצא: Hello Sarah, you are 25 years old and live in Unknown.
+
+# greet("Mike", 40, "Berlin")  
+# # לא תקין, כי צריך להיעזר בשם "city" ולא פשוט למלא ערך.
+
