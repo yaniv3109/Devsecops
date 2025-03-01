@@ -48,15 +48,15 @@ cars = [
 
 @app.get("/cars")
 def all_cars():
-    return cars
+    return jsonify(cars)
 
-@app.get("/new_cars")
-def new_cars():
-    new_cars_list = []
+@app.get("/old_cars")
+def old_cars():
+    old_cars_list = []
     for car in cars:
-        if car["year"] >= 2020:
-            new_cars_list.append(car)
-    return new_cars_list
+        if car["year"] < 2015:
+            old_cars_list.append(car)
+    return jsonify(old_cars_list)
 
 @app.get("/mazda")
 def mazda():
@@ -64,7 +64,7 @@ def mazda():
     for car in cars:
         if car["company"] == "Mazda":
             mazda_cars_list.append(car)
-    return mazda_cars_list
+    return jsonify(mazda_cars_list)
 
 
 @app.post("/cars")
